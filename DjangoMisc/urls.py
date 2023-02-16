@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from gh import views as gh_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # gh
+    path('', gh_views.index),
 ]
