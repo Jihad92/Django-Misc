@@ -150,3 +150,8 @@ class Dev(Configuration):
     OMDB_KEY = "c6b212de"
 
     CELERY_RESULT_BACKEND = "django-db"
+
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ADMINS = [
+        ("admin", "admin@admin.com"),
+    ]
