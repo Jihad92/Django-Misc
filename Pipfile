@@ -9,6 +9,8 @@ djangorestframework = "*"
 django-configurations = "*"
 requests = "*"
 pygithub = "*"
+celery = "*"
+django-celery-results = "*"
 
 [dev-packages]
 autopep8 = "*"
