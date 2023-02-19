@@ -11,6 +11,7 @@ requests = "*"
 pygithub = "*"
 celery = "*"
 django-celery-results = "*"
+django-celery-beat = "*"
 
 [dev-packages]
 autopep8 = "*"
