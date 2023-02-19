@@ -6,6 +6,8 @@ from django.utils.timezone import now
 
 from omdb.django_client import get_client_from_settings
 from .models import Genre, SearchTerm, Movie
+# from .signals import movie_filled
+import movies.signals
 
 
 logger = logging.getLogger(__name__)
@@ -36,6 +38,9 @@ def fill_movie_details(movie):
         movie.genres.add(genre)
     movie.is_full_record = True
     movie.save()
+
+    # Dispatch signal
+    movies.signals.movie_filled.send(sender=fill_movie_details, movie=movie)
 
 
 def search_and_save(search):
